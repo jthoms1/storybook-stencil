@@ -1,0 +1,94 @@
+/**
+  * @prop --background: Background of the button
+  * @prop --color: Text color of the button
+  *
+  * @prop --padding-top: Top padding of the button
+  * @prop --padding-right: Right padding of the button
+  * @prop --padding-bottom: Bottom padding of the button
+  * @prop --padding-left: Left padding of the button
+  */
+:host {
+  --padding: var(--padding-top, var(--space-5)) var(--padding-right, var(--space-5))
+    var(--padding-bottom, var(--space-5)) var(--padding-left, var(--space-5));
+  --padding-small: var(--padding-top, var(--space-3)) var(--padding-right, var(--space-3))
+    var(--padding-bottom, var(--space-3)) var(--padding-left, var(--space-3));
+}
+
+.btn {
+  transition: all var(--duration-quickly) ease;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-4);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  padding: var(--padding);
+  border-radius: var(--radius-1);
+  letter-spacing: var(--letter-spacing-wide);
+  box-shadow: var(--elevation-3);
+  border-radius: var(--radius-2);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+.btn:disabled,
+.btn.disabled {
+  opacity: 0.3;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn.small {
+  padding: var(--padding-small);
+  font-size: var(--font-size-5);
+  text-transform: none;
+}
+
+app-icon {
+  margin-right: var(--space-2);
+  opacity: 0.8;
+}
+
+.btn:hover,
+:host(.hover) .btn {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: var(--elevation-4);
+}
+
+.btn.primary {
+  background: var(--background, var(--color-primary));
+  color: var(--color, var(--color-white));
+}
+.btn.primary:active,
+:host(.active) .btn.primary {
+  background: var(--background, var(--color-indigo-7));
+}
+
+.btn.secondary {
+  background: var(--background, var(--color-white));
+  color: var(--color, var(--color-primary));
+}
+.btn.secondary:active,
+:host(.active) .btn.secondary {
+  background: var(--background, var(--color-gray-1));
+  box-shadow: var(--elevation-2);
+}
+
+.btn.tertiary {
+  background: var(--background, var(--color-indigo-1));
+  color: var(--color, var(--color-indigo-7));
+  box-shadow: none;
+}
+.btn.tertiary:hover,
+:host(.hover) .btn {
+  box-shadow: var(--elevation-1);
+}
+.btn.tertiary:active,
+:host(.active) .btn.tertiary {
+  background: var(--background, var(--color-indigo-2));
+  color: var(--color, var(--color-primary));
+}
